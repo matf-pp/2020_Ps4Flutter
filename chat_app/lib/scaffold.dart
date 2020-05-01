@@ -25,9 +25,9 @@ import 'package:flutter/material.dart';
           ),
           body: ListView(
             children: <Widget>[
-              HeadOfChat(),
-              HeadOfChat(),
-              HeadOfChat()
+              HeadOfChat(friendName: "Dragan",
+                lastMessage: "Gde su prasici?",
+                messageTime: DateTime.now(),),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
