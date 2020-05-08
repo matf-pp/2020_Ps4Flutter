@@ -1,0 +1,12 @@
+{
+  "12345": {
+    "avatar": "https://images.unsplash.com/photo-1476900966873-ab290e38e3f7?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=fe0976a79ece0ee8effca4cab4527ae2",
+    "messages": {
+        "type": "string",
+        "content": "Gde je moje prase?",
+        "from": "friend",
+        "timestamp": 445823490823
+      },
+    "display_name": "Dragan"
+  }
+}

@@ -1,12 +1,15 @@
-  import 'package:chatapp/HeadOfCheat.dart';
+import 'package:chatapp/HeadOfCheat.dart';
 import 'package:chatapp/viewOfChat.dart';
+import 'package:chatapp/views/historyOfChat.dart';
+import 'package:chatapp/views/settingsView.dart';
+import 'package:chatapp/views/viewOfHome.dart';
 import 'package:flutter/material.dart';
 
   class myChatApp extends StatefulWidget {
     @override
     _myChatAppState createState() => _myChatAppState();
   }
-  
+  // scaffold widget ili main widget osnovni widget na koji gradimo citavu aplikaciju
   class _myChatAppState extends State<myChatApp> {
     int _currentIndex = 0;
     @override
@@ -19,17 +22,12 @@ import 'package:flutter/material.dart';
               IconButton(icon:
                 Icon(Icons.live_help),
                 onPressed: (){
-                  print("Button was pressed");
+                  print("Help button was pressed");
                 },)
             ],
           ),
-          body: ListView(
-            children: <Widget>[
-              HeadOfChat(friendName: "Dragan",
-                lastMessage: "Gde su prasici?",
-                messageTime: DateTime.now(),),
-            ],
-          ),
+          body:
+              selectScreen(_currentIndex),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,
             items: <BottomNavigationBarItem>[
@@ -49,13 +47,28 @@ import 'package:flutter/material.dart';
           ),
           floatingActionButton: FloatingActionButton(
             onPressed:(){
-              print("Fab was pressed");
+              print("Plus was pressed");
             },
             child: Icon(Icons.add),
           ),
         ),
 //      home: chatView()
       );
+    }
+    Widget selectScreen(int _index){
+      switch(_index){
+        case 0:
+          return homeView();
+          break;
+        case 1:
+          return ChatHistory();
+          break;
+        case 2:
+          return settingsView();
+          break;
+        default:
+          return homeView();
+      }
     }
   }
   

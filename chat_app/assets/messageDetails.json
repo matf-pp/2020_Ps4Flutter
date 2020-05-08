@@ -1,0 +1,24 @@
+{
+  "12345": {
+    "avatar": "https://images.unsplash.com/photo-1476900966873-ab290e38e3f7?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=fe0976a79ece0ee8effca4cab4527ae2",
+    "messages": [{
+        "type": "string",
+        "content": "Da nisi mozda video moje prase?",
+        "from": "friend",
+        "display_name": "Dragan"
+      },
+      {
+        "type": "string",
+        "content": "Evo slika, ako vidis javi",
+        "from": "friend",
+        "display_name": "Dragan"
+      },
+      {
+        "type": "image/url",
+        "content": "https://example.com/pic/123456789",
+        "from": "friend",
+        "display_name": "Dragan"
+      }
+    ]
+  }
+}

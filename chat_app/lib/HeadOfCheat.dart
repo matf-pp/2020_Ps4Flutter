@@ -9,29 +9,37 @@ class HeadOfChat extends StatefulWidget {
     Key key,
     this.friendName : "",
     this.lastMessage : "",
-    this.messageTime})
+    this.messageTime,
+    this.friendId,
+    this.avatarUrl = ""})
     : super(key:key);
 
   final String friendName;
   final String lastMessage;
   final DateTime messageTime;
+  final friendId;
+  final avatarUrl;
 }
 
 class _HeadOfChatState extends State<HeadOfChat> {
   @override
   Widget build(BuildContext context) {
+    //widget InkWell koji omogucava interakciju widgeta konkretno promene boje
+    //pri kliku na zeljeni chat
     return InkWell(
+      //Implementacija ulaska na poruke
       onTap: ()async{
-        print(widget.friendName + " has beem tapped!");
         await Navigator.of(context).push(MaterialPageRoute<Null>(
           builder: (BuildContext context){
             return chatView(
               friendName: widget.friendName,
               lastMessage: widget.lastMessage,
+              friendId: widget.friendId,
             );
           },
           fullscreenDialog: true));
       },
+      //Boja menjanja pri kliku
       highlightColor: Colors.blue,
       child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -40,6 +48,7 @@ class _HeadOfChatState extends State<HeadOfChat> {
 //          color:Colors.grey[300],
           child: Row(
             children: <Widget>[
+              //Expanded wiget koji prosiruje drugi widget
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,13 +66,17 @@ class _HeadOfChatState extends State<HeadOfChat> {
               ),
               Center(
                 child: CircleAvatar(
+                  backgroundImage: Image.network(widget.avatarUrl).image,
                   radius: 35,
-                  child: Text(widget.friendName.substring(0,1),
+                  //Podesavanje teksta u avataru
+                  child:
+                  widget.avatarUrl == "" ?
+                  Text(widget.friendName.substring(0,1),
                           style: Theme.of(context)
                               .textTheme
                               .display1
                               .apply(color: Colors.white,fontWeightDelta: 3),
-                  ),
+                  ) : Container(),
                 )
               )
             ],
