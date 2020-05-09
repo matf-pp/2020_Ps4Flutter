@@ -23,5 +23,7 @@ This is prototip of chat_app with static data.
     
     By clicking on a friend's chat, we enter in conversation
     
- 
+## Settings view 
+  
+  - In progress
  
