@@ -14,5 +14,8 @@ This is prototip of chat_app with static data.
   - Settings view
 
 ## Home view
+
+  - Profile of user 
+
  
  
