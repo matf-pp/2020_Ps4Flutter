@@ -17,5 +17,11 @@ This is prototip of chat_app with static data.
 
   - Profile of user 
 
+## Chat view
+
+  - All chats of user 
+    
+    By clicking on a friend's chat, we enter the
+
  
  
