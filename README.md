@@ -3,9 +3,9 @@
 
 This is prototip of chat_app with static data.
 
-# Views
+## Views
 
-We have three basic view: 
+**We have three basic view:**  
 
 - Home view 
 
@@ -13,3 +13,4 @@ We have three basic view:
 
 - Settings view
 
+## Home view
