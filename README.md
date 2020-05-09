@@ -3,7 +3,7 @@ Programming chat application with dart(framework flutter)
 
 This is prototip of chat_app with static data.
 
-# View
+# Views
 
 We have three basic view: 
 
