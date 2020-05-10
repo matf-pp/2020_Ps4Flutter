@@ -1,37 +1,35 @@
+import 'package:chatapp/homePage.dart';
 import 'package:flutter/material.dart';
+import 'package:chatapp/views/settingsView.dart';
 
 class homeView extends StatefulWidget {
+
+  String name;
+  String profilAvatar;
+  homeView({Key key,
+    this.name = "Marko Vicentijevic",
+    this.profilAvatar = "assets/images/avatarMe.jpg"}) : super(key: key);
+
   @override
-  _homeViewState createState() => _homeViewState();
+  _homeViewState createState() => _homeViewState(name);
+
 }
 
 class _homeViewState extends State<homeView> {
+
+  String name;
+  _homeViewState(this.name);
+
   @override
   Widget build(BuildContext context) {
+//    settingsView settingsPar = settingsView();
+//    if(settingsPar.profilName.length > 0)
+//      widget.name = settingsPar.profilName;
     return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(40.0),
-        child: Column(
-         mainAxisAlignment: MainAxisAlignment.start,
-         children: <Widget>[
-           Center(
-             child:
-             CircleAvatar(
-               radius: 70,
-               backgroundColor: Colors.grey,
-               backgroundImage: Image.asset("assets/images/avatarMe.jpg").image,
-             ),
-           ),
-           Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Text(
-               "Marko Vicentijevic",
-               style: Theme.of(context).textTheme.title,
-             ),
-           ),
-         ],
+      child:  HomePage(
+        name: widget.name,
+        profilAvatar: widget.profilAvatar,
         ),
-      )
     );
   }
 }

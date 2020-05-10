@@ -21,7 +21,7 @@ class chatView extends StatefulWidget {
 
 class _chatViewState extends State<chatView> {
   String _friendInital;
-  TextEditingController _controller = TextEditingController();
+  TextEditingController controller = TextEditingController();
   List<dynamic> listOfMessages;
   String avatarUrl;
   Map<String,dynamic> tmpMessages;
@@ -45,7 +45,7 @@ class _chatViewState extends State<chatView> {
   void dispose() {
     // TODO: implement dispose
     focusChatMessage.dispose();
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -143,12 +143,11 @@ class _chatViewState extends State<chatView> {
                 //Obrade teksta, podesavanje parametra, _controler promenljiva
                 //koja se koristi za protok podataka u chat-u
                 TextFormField(
-                  controller: _controller,
+                  controller: controller,
                   autocorrect: false,
                   focusNode: focusChatMessage,
 //                  autofocus: true,
                   onFieldSubmitted: (String _message){
-                    print("on field submited >>" + _controller.text);
                     submitText();
                   },
                   decoration: InputDecoration(hintText: "Type your message here",
@@ -164,7 +163,6 @@ class _chatViewState extends State<chatView> {
                           Icons.send,
                           color: Colors.blue,),
                       onPressed: (){
-                        print('Send message tapped >> ' + _controller.text);
                         submitText();
                       },
                     ),
@@ -178,7 +176,6 @@ class _chatViewState extends State<chatView> {
                         Icons.add_a_photo,
                         color: Colors.blue,),
                       onPressed: (){
-                        print('Send message tapped >> ' + _controller.text);
 //                        FocusScope.of(context).requestFocus(focusChatMessage);
 //                        submitText();
                       },
@@ -194,17 +191,17 @@ class _chatViewState extends State<chatView> {
   }
 
   void submitText() {
-    if (_controller.text.length > 0) {
+    if (controller.text.length > 0) {
       //Kreiranje nove poruke
       Map<String, dynamic> newMessage = {
         "type": "string",
-        "content": _controller.value.text,
+        "content": controller.value.text,
         "from": "me",
       };
 
       try {
         listOfMessages.add(newMessage);
-        _controller.clear();
+        controller.clear();
       }
       catch (e) {
         print("Error: ${e.toString()}");

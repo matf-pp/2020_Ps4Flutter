@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
   }
   // scaffold widget ili main widget osnovni widget na koji gradimo citavu aplikaciju
   class _myChatAppState extends State<myChatApp> {
-    int _currentIndex = 0;
+    int currentIndex = 0;
     @override
     Widget build(BuildContext context) {
       return MaterialApp(
@@ -27,9 +27,9 @@ import 'package:flutter/material.dart';
             ],
           ),
           body:
-              selectScreen(_currentIndex),
+              selectScreen(currentIndex),
           bottomNavigationBar: BottomNavigationBar(
-            currentIndex: _currentIndex,
+            currentIndex: currentIndex,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                   icon: Icon(Icons.home),title: Text('Home')),
@@ -41,22 +41,22 @@ import 'package:flutter/material.dart';
             onTap: (int index){
               print("index is " + index.toString());
               setState(() {
-                _currentIndex = index;
+                currentIndex = index;
               });
             },
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed:(){
-              print("Plus was pressed");
-            },
-            child: Icon(Icons.add),
-          ),
+//          floatingActionButton: FloatingActionButton(
+//            onPressed:(){
+//              print("Plus was pressed");
+//            },
+//            child: Icon(Icons.add),
+//          ),
         ),
 //      home: chatView()
       );
     }
-    Widget selectScreen(int _index){
-      switch(_index){
+    Widget selectScreen(int index){
+      switch(index){
         case 0:
           return homeView();
           break;
