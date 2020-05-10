@@ -25,5 +25,6 @@ This is prototip of chat_app with static data.
     
 ## Settings view 
   
-  - In progress
+  - Text field for change userName
+  - Text field for avatar path
  
