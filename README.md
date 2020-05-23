@@ -49,3 +49,6 @@ This is prototip of chat_app with static data.
 
 - Enter of chat layout 
  ![Profil page layout](https://github.com/matf-pp/2020_Ps4Flutter/blob/master/chat_app/screenOfApp/Screenshot_1589078382.png?raw=true)
+ 
+ - Settings of chat layout 
+ ![Profil page layout](https://github.com/matf-pp/2020_Ps4Flutter/blob/master/chat_app/screenOfApp/Screenshot_1589078387.png?raw=true)
