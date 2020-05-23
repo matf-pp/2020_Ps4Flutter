@@ -27,4 +27,11 @@ This is prototip of chat_app with static data.
   
   - Text field for change userName
   - Text field for avatar path
- 
+
+## Instalation environment
+  - Install Android studio: https://developer.android.com/studio
+  - Install Flutter : https://flutter.dev/docs/get-started/install 
+    select option based on operating system
+  - On the link there is an explanation : https://flutter.dev/docs/get-started/install
+    of set up your Android device or set up the Android emulator
+
