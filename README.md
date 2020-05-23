@@ -41,4 +41,6 @@ This is prototip of chat_app with static data.
   - Run main.dart with Android device or Android emulator
  
 ## application layout
+ -Profil page layout 
  ![Profil page layout](https://github.com/matf-pp/2020_Ps4Flutter/blob/master/chat_app/screenOfApp/Screenshot_1589078374.png?raw=true)
+ 
